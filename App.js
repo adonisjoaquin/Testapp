@@ -22,7 +22,8 @@ export default function App() {
     return(
       <Tab.Navigator
       screenOptions={({route}) => ({
-        tabBarShowLabel: false, 
+        tabBarShowLabel: false,
+        headerShown: false, 
         tabBarStyle:{
           height: 50
         },
@@ -61,13 +62,19 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen name="bottom" Component={bottomTabScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   
   );
 };
+
+
+export default App;
 
 
 const styles = StyleSheet.create({
