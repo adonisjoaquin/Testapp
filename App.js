@@ -6,14 +6,14 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Home from './src/components/screens/Home';
 import Search from './src/components/screens/Search';
-import Reels from './src/components/screens/reels';
-import Activity from './src/components/screens/activity';
+import Reels from './src/components/screens/Reels';
+import Activity from './src/components/screens/Activity';
 import Profile from './src/components/screens/Profile';
 import Ionic from "react-native-vector-icons/Ionicons"
 
-export default function App() {
+const App = () => {
 
-  const stack = createNativeStackNavigator ();
+  const Stack = createNativeStackNavigator();
   
   const Tab = createBottomTabNavigator();
 
@@ -30,7 +30,7 @@ export default function App() {
         
         tabBarIcon: ({focused, size, colour}) => {
           let iconName;
-          if (route,name=== "Home"){
+          if (route.name === "Home"){
             iconName= focused ? "home-sharp" : "home-outline";
             size = focused ? size + 8 : size + 2;
           } else if (route.name === "Search"){
@@ -43,7 +43,7 @@ export default function App() {
             iconName = focused ? "ios-person-circle" : "ios-person-outline"
           }    
 
-          return <Iconic name={iconName} size={size} color= {colour}/>
+          return <Ionic name={iconName} size={size} color= {colour}/>
         }
 
       })}>
@@ -73,13 +73,14 @@ export default function App() {
   );
 };
 
-export default App
-const styles = StyleSheet.create({
-  Container: {
-    Flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    paddingTop:100
-  }
-});
+
+// const styles = StyleSheet.create({
+//   Container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'flex-start',
+//     justifyContent: 'flex-start',
+//     paddingTop:100
+//   }
+// });
+export default App; 
