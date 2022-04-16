@@ -1,19 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Ionic from "react-native-vector-icons/Ionicons";
-import {NavigationContainer} from "@react-navigation/native";
+import {NavigationContainer, StackActions} from "@react-navigation/native";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 export default function App() {
+
+  const stack = createNativeStackNavigator ();
+  
+  const Tab = createBottomTabNavigator();
+
+
+  const bottomTabScreen = () => {
+    return(
+      <Tab.Navigator
+      screenOptions={({route}) => {
+
+      }}>
+        <Tab.Screen name="Home" component={Home}/>
+        <Tab.Screen/>
+
+      </Tab.Navigator>
+    )
+
+
   return (
-    <View style={styles.container}>
-      <Text>
-        hello world
-      </Text>
-      <Ionic name="play" style={{fontSize: 20}}/>
-      <StatusBar style="auto" />
-    </View>
+
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="" Component={}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  
   );
 };
 
