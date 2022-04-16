@@ -62,27 +62,22 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator
+      <StackActions.Navigator
       screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="bottom" Component={bottomTabScreen}/>
-      </Stack.Navigator>
+        <Stack.Screen name="bottom" component={bottomTabScreen}/>
+      </StackActions.Navigator>
     </NavigationContainer>
-  
+
   );
 };
-
-
-export default App;
-
-
+export default App
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  Container: {
+    Flex: 1,
     backgroundColor: '#fff',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    paddingTop:100
-  },
-});
+    justifyContent: 'flex-start'
+    paddingTop:100}
+  });
