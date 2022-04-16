@@ -9,6 +9,7 @@ import Search from './src/components/screens/Search';
 import Reels from './src/components/screens/reels';
 import Activity from './src/components/screens/activity';
 import Profile from './src/components/screens/Profile';
+import Ionic from "react-native-vector-icons/Ionicons"
 
 export default function App() {
 
@@ -21,8 +22,8 @@ export default function App() {
     return(
       <Tab.Navigator
       screenOptions={({route}) => ({
-        tabBarShowLabel={false,
-        tabBarStyle={
+        tabBarShowLabel: false, 
+        tabBarStyle:{
           height: 50
         },
         
@@ -31,9 +32,13 @@ export default function App() {
           if (route,name=== "Home"){
             iconName= focused ? "home-sharp" : "home-outline";
             size = focused ? size + 8 : size + 2;
-            
+          } else if (route.name === "Search"){
+            iconName = focused ? "Search" : "ios-search-outline"
           }
+
+          return <Iconic name={iconName} size={size} color= {colour}/>
         }
+
       })}>
         <Tab.Screen name="Home" component={Home}/>
         <Tab.Screen name="Search" component={Search}/>
@@ -51,7 +56,7 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="" Component={}/>
+        <Stack.Screen name="bottom" Component={bottomTabScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   
