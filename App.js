@@ -57,7 +57,7 @@ export default function App() {
 
       </Tab.Navigator>
     )
-
+  }
 
   return (
 
@@ -72,12 +72,14 @@ export default function App() {
 
   );
 };
+
 export default App
 const styles = StyleSheet.create({
   Container: {
     Flex: 1,
     backgroundColor: '#fff',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start'
-    paddingTop:100}
-  });
+    justifyContent: 'flex-start',
+    paddingTop:100
+  }
+});
