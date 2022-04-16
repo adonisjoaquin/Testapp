@@ -34,12 +34,12 @@ export default function App() {
             size = focused ? size + 8 : size + 2;
           } else if (route.name === "Search"){
             iconName = focused ? "Search" : "ios-search-outline"
-          }else if (route.name === "Search"){
-            iconName = focused ? "Search" : "ios-search-outline"
-          }else if (route.name === "Search"){
-            iconName = focused ? "Search" : "ios-search-outline"
-          }else if (route.name === "Search"){
-            iconName = focused ? "Search" : "ios-search-outline"
+          }else if (route.name === "Reels"){
+            iconName = focused ? "caret-forward-circle" : "caret-forward-circle-outline"
+          }else if (route.name === "Activity"){
+            iconName = focused ? "ios-heart" : "ios-heart-outline"
+          }else if (route.name === "Profile"){
+            iconName = focused ? "ios-person-circle" : "ios-person-outline"
           }    
 
           return <Iconic name={iconName} size={size} color= {colour}/>
